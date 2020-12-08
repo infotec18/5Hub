@@ -20,12 +20,12 @@ services:
     networks:
       - mysql-compose-network
   
-  appinfotec5hub:
-    image: juniorfdl2/infotec5hub
-    ports:
-      - 5000: 80
-    networks:
-      - mysql-compose-network    
+  #appinfotec5hub:
+  #  image: juniorfdl2/infotec5hub
+  #  ports:
+  #    - 5000: 80
+  #  networks:
+  #    - mysql-compose-network    
 
 networks: 
   mysql-compose-network:

@@ -14,4 +14,6 @@ namespace Models
         public string type { get; set; }
         public DateTime sent_at { get; set; }
     }
+   
+    
 }

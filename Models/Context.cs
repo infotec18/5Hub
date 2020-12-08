@@ -17,6 +17,11 @@ namespace Models
 
         public DbSet<ClientesOmni> ClientesOmni { get; set; }
         public DbSet<ClientesOmniMsg> ClientesOmniMsg { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        
+        public DbSet<CampanhasClientes> CampanhasClientes { get; set; }
+        public DbSet<Operadores> Operadores { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,6 +32,24 @@ namespace Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.Entity<Clientes>(entity =>
+            {
+                entity.HasKey(e => e.CODIGO);
+                entity.Property(e => e.CODIGO).IsRequired();
+            });
+            
+            modelBuilder.Entity<CampanhasClientes>(entity =>
+            {
+                entity.HasKey(e => e.CODIGO);
+                entity.Property(e => e.CODIGO).IsRequired();
+            });
+            
+            modelBuilder.Entity<Operadores>(entity =>
+            {
+                entity.HasKey(e => e.CODIGO);
+                entity.Property(e => e.CODIGO).IsRequired();
+            });
 
             modelBuilder.Entity<ClientesOmni>(entity =>
             {

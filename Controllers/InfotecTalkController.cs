@@ -30,6 +30,84 @@ namespace Infotec5Hub.Controllers
         {
             return Ok("Integração Infotec X 5Hub");
         }
+        
+        [HttpGet("cliente/cpf/{id}")]
+        public object GetCpf(string id)
+        {
+            Clientes cliente;
+            using (var context = new InfotecContext(_configuration))
+            {
+                cliente = context.Clientes.AsNoTracking()
+                      .FirstOrDefault(c =>  Equals(c.CPF_CNPJ, id));
+
+                if (cliente != null)
+                {
+                    ObterOperador(context, cliente);
+                    return Ok(cliente);
+                }
+
+            }
+
+            return NotFound();
+        }
+
+        private static void ObterOperador(InfotecContext context, Clientes cliente)
+        {
+            var campanha = context.CampanhasClientes.AsNoTracking()
+                .FirstOrDefault(c => Equals(c.CLIENTE, cliente.CODIGO) && Equals(c.CONCLUIDO, "NAO"));
+
+            if (campanha != null)
+            {
+                var ope = context.Operadores.AsNoTracking()
+                    .FirstOrDefault(c => Equals(c.CODIGO, campanha.OPERADOR));
+
+                if (ope != null)
+                {
+                    cliente.OPERADOR_NOME = ope.NOME;
+                    cliente.OPERADOR = ope.CODIGO;
+                }
+            }
+        }
+
+        [HttpGet("cliente/fone/{ddd}/{fone}")]
+        public object GetFone(int ddd, string fone)
+        {
+            Clientes cliente;
+            using (var context = new InfotecContext(_configuration))
+            {
+                cliente = context.Clientes.AsNoTracking()
+                    .FirstOrDefault(c => Equals(c.FONE1, fone) && Equals(c.AREA1, ddd));
+
+                if (cliente != null)
+                {
+                    ObterOperador(context, cliente);
+                    return Ok(cliente);
+                }
+
+            }
+
+            return NotFound();
+        }
+
+         [HttpGet("cliente/email/{email}")]
+        public object GetFone(string email)
+        {
+            Clientes cliente;
+            using (var context = new InfotecContext(_configuration))
+            {
+                cliente = context.Clientes.AsNoTracking()
+                    .FirstOrDefault(c => Equals(c.EMAIL, email));
+
+                if (cliente != null)
+                {
+                    ObterOperador(context, cliente);
+                    return Ok(cliente);
+                }
+
+            }
+
+            return NotFound();
+        }
 
         private bool AddClientesOmni(InfotecContext context, InfotecTalk infotecTalk)
         {

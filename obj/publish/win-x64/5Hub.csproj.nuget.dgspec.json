@@ -1,27 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "E:\\5Hub\\5Hub\\5Hub.csproj": {}
+    "C:\\Dados Elvio\\C\\Elvio\\Cursos\\cSharp\\Infotec\\5Hub\\5Hub.csproj": {}
   },
   "projects": {
-    "E:\\5Hub\\5Hub\\5Hub.csproj": {
+    "C:\\Dados Elvio\\C\\Elvio\\Cursos\\cSharp\\Infotec\\5Hub\\5Hub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\5Hub\\5Hub\\5Hub.csproj",
+        "projectUniqueName": "C:\\Dados Elvio\\C\\Elvio\\Cursos\\cSharp\\Infotec\\5Hub\\5Hub.csproj",
         "projectName": "5Hub",
-        "projectPath": "E:\\5Hub\\5Hub\\5Hub.csproj",
-        "packagesPath": "C:\\Users\\Programador\\.nuget\\packages\\",
-        "outputPath": "E:\\5Hub\\5Hub\\obj\\",
+        "projectPath": "C:\\Dados Elvio\\C\\Elvio\\Cursos\\cSharp\\Infotec\\5Hub\\5Hub.csproj",
+        "packagesPath": "C:\\Users\\elvio.junior\\.nuget\\packages\\",
+        "outputPath": "C:/Dados Elvio/C/Elvio/Cursos/cSharp/Infotec/5Hub/obj/publish/win-x64/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Programador\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\elvio.junior\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://artifactory.softplan.com.br/artifactory/api/nuget/v3/nuget-local": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -67,7 +69,12 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }
